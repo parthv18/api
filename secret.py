@@ -9,6 +9,10 @@ from git import Repo
 
 logger = logging.getLogger(__name__)
 
+
+GROQ_API_KEY = "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"
+GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
+
 def locate_secret_in_repo(repo_path, raw_secret):
     """Fallback: search repo for the raw secret and return file + line if found."""
     if not raw_secret:
@@ -122,3 +126,4 @@ if __name__ == "__main__":
     test_repo = "https://github.com/parthv18/testing.git"  # Example repo with test secrets
     report = scan_github_repo(test_repo)
     print(json.dumps(report, indent=2))
+
