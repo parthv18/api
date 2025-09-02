@@ -10,6 +10,17 @@ from git import Repo
 logger = logging.getLogger(__name__)
 
 
+def add_numbers(a: int, b: int) -> int:
+    return a + b
+
+def greet(name: str) -> str:
+    return "Hello, " + name
+
+x: int = add_numbers(5, 7)
+y: str = greet(10)  # Intentional type error
+
+
+
 
 
 def locate_secret_in_repo(repo_path, raw_secret):
@@ -125,5 +136,6 @@ if __name__ == "__main__":
     test_repo = "https://github.com/parthv18/testing.git"  # Example repo with test secrets
     report = scan_github_repo(test_repo)
     print(json.dumps(report, indent=2))
+
 
 
